@@ -1,45 +1,86 @@
 {{ model | json }}
 <form #heroForm="ngForm">
-<div class="form-group">
-  <label for="name">Name</label>
-  <input type="text" class="form-control" id="name"
-         required
-         [(ngModel)]="model.name" name="name">
-</div>
-<div class="form-group">
-  <label for="userName">UserName</label>
-  <input type="email" class="form-control" id="userName"
-         required
-         [(ngModel)]="model.userName" name="userName">
-</div>
-<div class="form-group">
-  <label for="password">password</label>
-  <input type="password" class="form-control" id="password"
-         required
-         minlength="8"
-         [(ngModel)]="model.password" name="password" pattern={{model.confirmPassword}} >
-</div>
-<div class="form-group">
-  <label for="password">Confirm password</label>
-  <input type="password" class="form-control" id="password"
-         required
-         minlength="8"
-         [(ngModel)]="model.confirmPassword" name="password" pattern={{model.password}}> 
-</div>
-<div class="form-group">
-  <label for="mobileNumber">MobileNumber</label>
-  <input type="text" class="form-control" id="mobileNumber"
-         required
-         [(ngModel)]="model.mobileNumber" name="mobileNumber">
-</div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      required
+      [(ngModel)]="model.name"
+      name="name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="userName">UserName</label>
+    <input
+      type="email"
+      class="form-control"
+      id="userName"
+      required
+      [(ngModel)]="model.userName"
+      name="userName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      required
+      minlength="8"
+      [(ngModel)]="model.password"
+      name="password"
+      pattern="{{ model.confirmPassword }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Confirm password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      required
+      minlength="8"
+      [(ngModel)]="model.confirmPassword"
+      name="password"
+      pattern="{{ model.password }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="mobileNumber">MobileNumber</label>
+    <input
+      type="text"
+      class="form-control"
+      id="mobileNumber"
+      required
+      [(ngModel)]="model.mobileNumber"
+      name="mobileNumber"
+    />
+  </div>
 
-<div class="form-group">
-  <label for="language">Language: </label>
-  <select class="form-control"  id="power"
-          required
-          [(ngModel)]="model.language" name="language">
-    <option *ngFor="let language of languages" [value]="language">{{language}}</option>
-  </select>
-</div>
-<button type="button" class="btn btn-success" [disabled]="!heroForm.form.valid" (click)="registerUser()">Submit</button>
+  <div class="form-group">
+    <label for="language">Language: </label>
+    <select
+      class="form-control"
+      id="power"
+      required
+      [(ngModel)]="model.language"
+      name="language"
+    >
+      <option *ngFor="let language of languages" [value]="language">
+        {{ language }}
+      </option>
+    </select>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+    [disabled]="!heroForm.form.valid"
+    (click)="registerUser()"
+  >
+    Submit
+  </button>
+  <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 </form>

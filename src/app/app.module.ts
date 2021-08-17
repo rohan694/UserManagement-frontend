@@ -14,7 +14,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+import { AdminLoginViewlistComponent } from './admin-login-viewlist/admin-login-viewlist.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -23,28 +27,32 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSliderModule,
+    MatInputModule,
+    MatTableModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'createUser', component: CreateUserComponent },
-      { path: 'login', component: LoginComponent},
-    ]), 
+      { path: 'userDetails', component: UserDetailsComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'adminLoginViewList', component: AdminLoginViewlistComponent },
+    ]),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
     CreateUserComponent,
     LoginComponent,
     HomeComponent,
+    UserDetailsComponent,
+    AdminLoginViewlistComponent,
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
 
 /*
 Copyright Google LLC. All Rights Reserved.
