@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: '', component: HomeComponent },
       { path: 'createUser', component: CreateUserComponent },
       { path: 'login', component: LoginComponent},
     ]), 
@@ -35,6 +37,7 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     CreateUserComponent,
     LoginComponent,
+    HomeComponent,
   ],
   bootstrap: [
     AppComponent
